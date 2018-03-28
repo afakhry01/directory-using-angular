@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterByNamePipe } from '../filter-by-name.pipe';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  pipes: [ FilterByNamePipe ]
 })
 export class HomeComponent implements OnInit {
 
