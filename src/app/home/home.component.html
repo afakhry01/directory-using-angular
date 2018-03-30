@@ -6,7 +6,7 @@
 
       <div class="main__body__search container">
         <p class="search__p">filter contacts by name: </p>
-        <input class="search__input" type="text" name="contact" [(ngModel)]="searchName"/>
+        <input class="search__input" type="text" [(ngModel)]="searchName" name="searchName"/>
       </div>
 
       <div *ngFor = "let contact of contacts | filterByName:searchName" class="main__body__contact container">
@@ -19,14 +19,14 @@
 
     <form class="main__add container">
       <div class="add__category container">
-        <select class="add__category__select">
-          <option value="Friend">Friend</option>
-          <option value="Work">Work</option>
-          <option value="College">College</option>
-          <option value="Family">Family</option>
+        <select class="add__category__select" [(ngModel)]="category" name="category">
+          <option value="friend">Friend</option>
+          <option value="work">Work</option>
+          <option value="college">College</option>
+          <option value="family">Family</option>
         </select>
       </div>
-        <input class="add__name" type="text" placeholder="Enter Name"/>
+        <input class="add__name" type="text" placeholder="Enter Name" [(ngModel)]="name" name="name"/>
         <div class="add__button"><button class="add__button__button" (click) = "onAdd($event)">Add</button></div>
     </form>
   </div>

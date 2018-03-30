@@ -10,6 +10,6 @@ export class FilterByNamePipe implements PipeTransform {
       return contacts.filter(function(contact){
         let result = contact.name.toLowerCase().includes(name.toLowerCase());
         return result;
+      })
     }
-  }
 }

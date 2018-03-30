@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterByNamePipe } from '../filter-by-name.pipe';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  pipes: [ FilterByNamePipe ]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
@@ -15,9 +13,13 @@ export class HomeComponent implements OnInit {
     {category: "work", name: "Boss"},
   ];
 
+  name:any;
+  category:any;
+
   onAdd(event) {
     event.stopPropagation();
-    console.log(event);
+    this.contacts.push({category: this.category , name: this.name});
+    console.log(this.contacts);
   }
 
   constructor() { }
