@@ -12,7 +12,7 @@
       <div *ngFor = "let contact of contacts | filterByName:searchName" class="main__body__contact container">
         <div class="contact__category container"><p class="contact__category__p {{contact.category}}">{{contact.category.toUpperCase()}}</p></div>
         <p class="contact__name">{{contact.name}}</p>
-        <div class="contact__delete container"><p class="contact__delete__p">Delete</p></div>
+        <div class="contact__delete container"><p class="contact__delete__p" (click)="onDelete(contact)">Delete</p></div>
       </div>
 
     </div>

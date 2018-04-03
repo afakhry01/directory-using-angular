@@ -19,7 +19,12 @@ export class HomeComponent implements OnInit {
   onAdd(event) {
     event.stopPropagation();
     this.contacts.push({category: this.category , name: this.name});
-    console.log(this.contacts);
+  }
+
+  onDelete(aContact) {
+    event.stopPropagation();
+    let index = this.contacts.indexOf(aContact);
+    this.contacts.splice(index,1);
   }
 
   constructor() { }
